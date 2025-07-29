@@ -1,6 +1,8 @@
 const router = require('express').Router();
 let User = require('../models/user.model');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const auth = require('../middleware/auth');
 
 // Register a new user
 router.route('/register').post(async (req, res) => {
@@ -23,7 +25,7 @@ router.route('/register').post(async (req, res) => {
     });
 
     const savedUser = await newUser.save();
-    res.json(savedUser);
+    res.status(201).json({ id: savedUser._id, username: savedUser.username });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
@@ -43,7 +45,28 @@ router.route('/login').post(async (req, res) => {
     if (!isMatch)
       return res.status(400).json({ msg: 'Invalid credentials.' });
 
-    res.json({ msg: 'Login successful', user });
+    // Generate JWT
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+      expiresIn: '1h',
+    });
+
+    res.json({
+      token,
+      user: {
+        id: user._id,
+        username: user.username,
+      },
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Protected route example
+router.route('/profile').get(auth, async (req, res) => {
+  try {
+    const user = await User.findById(req.user).select('-password');
+    res.json(user);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
