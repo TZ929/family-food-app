@@ -24,6 +24,10 @@ connection.once('open', () => {
 const usersRouter = require('./routes/users');
 app.use('/users', usersRouter);
 
+// Centralized error handler
+const errorHandler = require('./middleware/errorHandler');
+app.use(errorHandler);
+
 app.get('/', (req, res) => {
   res.send('Family Food & Recipe Sharing App API');
 });
