@@ -47,32 +47,45 @@ This application is designed to bring families and friends together through the 
 - [x] Create project repository and `README.md`.
 - [x] Initialize Node.js backend with Express.
 - [x] Set up MongoDB database and connect to the application.
-- [ ] Implement user registration and login functionality.
+- [x] Implement user registration and login functionality.
 - [x] Implement JWT-based authentication and protected routes.
 - [x] Set up basic API routes for users.
 
-### Phase 2: Core Frontend & Basic Features
-- [ ] Set up a React application.
-- [ ] Create basic UI components (e.g., Navbar, Buttons, Cards).
-- [ ] Implement user registration and login pages.
-- [ ] Create a simple dashboard for authenticated users.
-- [ ] Implement the ability to create, view, edit, and delete food posts (without images first).
+### Phase 2: Mobile App (iOS & Android) – Core Features
 
-### Phase 3: Family & Friends System
-- [ ] Implement backend logic for creating and joining families.
-- [ ] Develop backend logic for adding/removing friends.
-- [ ] Create frontend interfaces for managing families and friends.
-- [ ] Adjust permissions based on user roles (Family, Friend).
+- [ ] Initialize React Native project with Expo CLI
+- [ ] Configure environment variables for API base URL
+- [ ] Implement authentication flow (register, login) with JWT storage
+- [ ] Set up React Navigation (stack / tab)
+- [ ] Create basic screens (Login, Register, Dashboard)
+- [ ] Display user profile data retrieved from `/users/profile`
 
-### Phase 4: Ratings, Comments & Image Uploads
-- [ ] Add backend routes for rating and commenting on posts.
-- [ ] Integrate a file storage solution for image uploads.
-- [ ] Update the frontend to allow users to upload images with their posts.
-- [ ] Display ratings and comments on food posts.
+### Phase 3: Core Frontend Web (optional)
 
-### Phase 5: Community Features & Deployment
-- [ ] Implement the "Community Cookbook" feature.
-- [ ] Add functionality to publish recipes to the community.
-- [ ] Refine the UI/UX.
-- [ ] Prepare the application for deployment.
-- [ ] Deploy the application to a cloud provider.
+- [ ] Set up a React web application (if web dashboard is desired)
+- [ ] Create basic UI components (e.g., Navbar, Buttons, Cards)
+- [ ] Implement user registration and login pages
+- [ ] Create a simple dashboard for authenticated users
+- [ ] Implement the ability to create, view, edit, and delete food posts (without images first)
+
+### Phase 4: Family & Friends System
+
+- [ ] Implement backend logic for creating and joining families
+- [ ] Develop backend logic for adding/removing friends
+- [ ] Create frontend interfaces for managing families and friends (mobile and/or web)
+- [ ] Adjust permissions based on user roles (Family, Friend)
+
+### Phase 5: Ratings, Comments & Image Uploads
+
+- [ ] Add backend routes for rating and commenting on posts
+- [ ] Integrate a file storage solution for image uploads
+- [ ] Update the frontend to allow users to upload images with their posts
+- [ ] Display ratings and comments on food posts
+
+### Phase 6: Community Features & Deployment
+
+- [ ] Implement the "Community Cookbook" feature
+- [ ] Add functionality to publish recipes to the community
+- [ ] Refine the UI/UX (mobile and/or web)
+- [ ] Prepare the application for deployment (App Store, Play Store, web hosting)
+- [ ] Deploy the application to a cloud provider
