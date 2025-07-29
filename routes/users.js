@@ -4,6 +4,18 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const auth = require('../middleware/auth');
 const { body, validationResult } = require('express-validator');
+const rateLimit = require('express-rate-limit');
+
+// Rate limiter for auth routes
+const authLimiter = rateLimit({
+  windowMs: 60 * 1000, // 1 minute window
+  max: 10, // limit each IP to 10 requests per windowMs
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many requests, please try again later.' },
+});
+
+router.use(authLimiter);
 
 // Register a new user
 router.route('/register').post([
