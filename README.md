@@ -45,8 +45,8 @@ This application is designed to bring families and friends together through the 
 
 ### Phase 1: Project Setup & Core Backend (Current)
 - [x] Create project repository and `README.md`.
-- [ ] Initialize Node.js backend with Express.
-- [ ] Set up MongoDB database and connect to the application.
+- [x] Initialize Node.js backend with Express.
+- [x] Set up MongoDB database and connect to the application.
 - [ ] Implement user registration and login functionality.
 - [ ] Set up basic API routes for users.
 
