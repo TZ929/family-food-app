@@ -48,7 +48,8 @@ This application is designed to bring families and friends together through the 
 - [x] Initialize Node.js backend with Express.
 - [x] Set up MongoDB database and connect to the application.
 - [ ] Implement user registration and login functionality.
-- [ ] Set up basic API routes for users.
+- [x] Implement JWT-based authentication and protected routes.
+- [x] Set up basic API routes for users.
 
 ### Phase 2: Core Frontend & Basic Features
 - [ ] Set up a React application.
