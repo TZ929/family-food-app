@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { View, TextInput, Button, Text, StyleSheet, ActivityIndicator, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
 import api from '../lib/api';
-import { saveToken } from '../utils/auth';
+import { saveToken, deleteToken } from '../utils/auth';
 
 export default function LoginScreen() {
   const [username, setUsername] = useState('');
@@ -21,7 +21,9 @@ export default function LoginScreen() {
         username,
         password,
       });
+      console.log('🔑 Login successful, token received');
       await saveToken(data.token);
+      console.log('💾 Token saved to SecureStore');
       router.replace('/(tabs)');
     } catch (err: any) {
       console.error(err);
@@ -56,6 +58,14 @@ export default function LoginScreen() {
       <Text style={{ marginTop: 16 }} onPress={() => router.push('/register')}>
         Don't have an account? Register
       </Text>
+      <Button 
+        title="Clear Stored Token" 
+        onPress={async () => {
+          await deleteToken();
+          Alert.alert('Token cleared', 'Please try logging in again');
+        }}
+        color="#ff8800"
+      />
     </View>
   );
 }

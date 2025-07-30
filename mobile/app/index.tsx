@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator, Button, Text } from 'react-native';
 import { Redirect } from 'expo-router';
-import { getToken } from '../utils/auth';
+import { getToken, deleteToken } from '../utils/auth';
 
 export default function Index() {
   const [token, setToken] = useState<string | null | undefined>(undefined);
 
   useEffect(() => {
     (async () => {
+      // Add a small delay to ensure the reset button is visible
+      await new Promise(resolve => setTimeout(resolve, 1000));
       const t = await getToken();
       setToken(t ?? null);
     })();
@@ -17,6 +19,15 @@ export default function Index() {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <ActivityIndicator />
+        <Text style={{ marginTop: 20 }}>Loading...</Text>
+        <Button 
+          title="Reset App (Clear Token)" 
+          onPress={async () => {
+            await deleteToken();
+            setToken(null);
+          }}
+          color="#ff4444"
+        />
       </View>
     );
   }

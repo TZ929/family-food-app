@@ -81,9 +81,12 @@ router.route('/login').post([
       return res.status(400).json({ msg: 'Invalid credentials.' });
 
     // Generate JWT
+    console.log('🔑 Generating JWT for user:', user._id);
+    console.log('🔑 JWT_SECRET exists:', !!process.env.JWT_SECRET);
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: '1h',
     });
+    console.log('🔑 Token generated:', token.substring(0, 20) + '...');
 
     res.json({
       token,

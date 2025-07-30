@@ -10,9 +10,13 @@ const api = axios.create({
 // attach token automatically
 api.interceptors.request.use(async (config) => {
   const token = await getToken();
+  console.log('🔑 Token from storage:', token ? 'exists' : 'missing');
   if (token) {
     config.headers = config.headers || {};
     config.headers['Authorization'] = `Bearer ${token}`;
+    console.log('✅ Added Authorization header to:', config.url);
+  } else {
+    console.log('❌ No token found for request to:', config.url);
   }
   return config;
 });
