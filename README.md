@@ -53,7 +53,7 @@ This application is designed to bring families and friends together through the 
 
 ### Phase 2: Mobile App (iOS & Android) – Core Features
 
-- [ ] Initialize React Native project with Expo CLI
+- [x] Initialize React Native project with Expo CLI
 - [ ] Configure environment variables for API base URL
 - [ ] Implement authentication flow (register, login) with JWT storage
 - [ ] Set up React Navigation (stack / tab)
