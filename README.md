@@ -43,7 +43,7 @@ This application is designed to bring families and friends together through the 
 
 ## Development Plan
 
-### Phase 1: Project Setup & Core Backend (Current)
+### Phase 1: Project Setup & Core Backend
 - [x] Create project repository and `README.md`.
 - [x] Initialize Node.js backend with Express.
 - [x] Set up MongoDB database and connect to the application.
@@ -54,12 +54,12 @@ This application is designed to bring families and friends together through the 
 ### Phase 2: Mobile App (iOS & Android) – Core Features
 
 - [x] Initialize React Native project with Expo CLI
-- [ ] Configure environment variables for API base URL
-- [ ] Implement authentication flow (register, login) with JWT storage (in progress)
+- [x] Configure environment variables for API base URL
+- [x] Implement authentication flow (register, login) with JWT storage
 - [ ] Set up React Navigation (stack / tab)
 - [x] Create Login screen and redirect root to /login
 - [x] Create Register screen
-- [ ] Create Register and Dashboard screens
+- [ ] Create Dashboard screen
 - [ ] Display user profile data retrieved from `/users/profile`
 
 ### Phase 3: Core Frontend Web (optional)
