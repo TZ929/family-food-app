@@ -55,9 +55,10 @@ This application is designed to bring families and friends together through the 
 
 - [x] Initialize React Native project with Expo CLI
 - [ ] Configure environment variables for API base URL
-- [ ] Implement authentication flow (register, login) with JWT storage
+- [ ] Implement authentication flow (register, login) with JWT storage (in progress)
 - [ ] Set up React Navigation (stack / tab)
-- [ ] Create basic screens (Login, Register, Dashboard)
+- [x] Create Login screen and redirect root to /login
+- [ ] Create Register and Dashboard screens
 - [ ] Display user profile data retrieved from `/users/profile`
 
 ### Phase 3: Core Frontend Web (optional)
