@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken } from '../utils/auth';
 
 // TODO: move to env or config
-const API_URL = 'http://localhost:5000';
+const API_URL = 'http://172.20.10.8:5000';
 
 const api = axios.create({
   baseURL: API_URL,

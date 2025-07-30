@@ -19,15 +19,19 @@
   },
   "homepage": "https://github.com/TZ929/family-food-app#readme",
   "dependencies": {
+    "@react-navigation/native": "^7.1.16",
+    "@react-navigation/native-stack": "^7.3.23",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "express-rate-limit": "^7.0.0",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.18.0",
     "mongoose": "^8.16.5",
-    "jsonwebtoken": "^9.0.2",
-    "express-validator": "^7.0.1",
-    "express-rate-limit": "^7.0.0"
+    "react-native-safe-area-context": "^5.5.2",
+    "react-native-screens": "^4.13.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

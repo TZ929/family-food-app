@@ -58,6 +58,7 @@ This application is designed to bring families and friends together through the 
 - [ ] Implement authentication flow (register, login) with JWT storage (in progress)
 - [ ] Set up React Navigation (stack / tab)
 - [x] Create Login screen and redirect root to /login
+- [x] Create Register screen
 - [ ] Create Register and Dashboard screens
 - [ ] Display user profile data retrieved from `/users/profile`
 

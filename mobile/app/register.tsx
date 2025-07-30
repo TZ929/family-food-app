@@ -1,31 +1,27 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, Text, StyleSheet, ActivityIndicator, Alert } from 'react-native';
+import { View, TextInput, Button, StyleSheet, ActivityIndicator, Alert, Text } from 'react-native';
 import { useRouter } from 'expo-router';
 import api from '../lib/api';
-import { saveToken } from '../utils/auth';
 
-export default function LoginScreen() {
+export default function RegisterScreen() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  const handleLogin = async () => {
+  const handleRegister = async () => {
     if (!username || !password) {
       Alert.alert('Validation', 'Username and password are required');
       return;
     }
     setLoading(true);
     try {
-      const { data } = await api.post('/users/login', {
-        username,
-        password,
-      });
-      await saveToken(data.token);
-      router.replace('/(tabs)');
+      await api.post('/users/register', { username, password });
+      Alert.alert('Success', 'Account created. Please log in.');
+      router.replace('/login');
     } catch (err: any) {
       console.error(err);
-      Alert.alert('Login failed', err?.response?.data?.error ?? 'Unknown error');
+      Alert.alert('Registration failed', err?.response?.data?.error ?? 'Unknown error');
     } finally {
       setLoading(false);
     }
@@ -33,7 +29,7 @@ export default function LoginScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Log in</Text>
+      <Text style={styles.title}>Create Account</Text>
       <TextInput
         style={styles.input}
         placeholder="Username"
@@ -51,11 +47,8 @@ export default function LoginScreen() {
       {loading ? (
         <ActivityIndicator />
       ) : (
-        <Button title="Login" onPress={handleLogin} />
+        <Button title="Register" onPress={handleRegister} />
       )}
-      <Text style={{ marginTop: 16 }} onPress={() => router.push('/register')}>
-        Don't have an account? Register
-      </Text>
     </View>
   );
 }
