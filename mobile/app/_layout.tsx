@@ -23,6 +23,7 @@ export default function RootLayout() {
         <Stack.Screen name="login" options={{ title: 'Login', headerShown: false }} />
         <Stack.Screen name="register" options={{ title: 'Register' }} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="create-post" options={{ title: 'Create Post' }} />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />

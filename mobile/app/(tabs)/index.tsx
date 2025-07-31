@@ -82,9 +82,11 @@ export default function DashboardScreen() {
         </Text>
       </View>
 
-      <View style={styles.actionsSection}>
-        <Button title="Logout" onPress={handleLogout} color="#ff4444" />
-      </View>
+                   <View style={styles.actionsSection}>
+               <Button title="Create Food Post" onPress={() => router.push('/create-post')} color="#4CAF50" />
+               <View style={{ height: 10 }} />
+               <Button title="Logout" onPress={handleLogout} color="#ff4444" />
+             </View>
     </View>
   );
 }
