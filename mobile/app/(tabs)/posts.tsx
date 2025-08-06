@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, RefreshControl, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, RefreshControl, ActivityIndicator, Alert, Image } from 'react-native';
 import { useRouter } from 'expo-router';
 import api from '../../lib/api';
 
@@ -9,6 +9,7 @@ interface FoodPost {
   description: string;
   cookTime: number;
   cookTimeUnit: string;
+  imageUrl?: string;
   author: {
     _id: string;
     username: string;
@@ -46,17 +47,22 @@ export default function PostsScreen() {
 
   const renderPost = ({ item }: { item: FoodPost }) => (
     <TouchableOpacity style={styles.postCard}>
-      <Text style={styles.postTitle}>{item.title}</Text>
-      <Text style={styles.postDescription} numberOfLines={2}>
-        {item.description}
-      </Text>
-      <View style={styles.postMeta}>
-        <Text style={styles.cookTime}>
-          ⏱️ {item.cookTime} {item.cookTimeUnit}
+      {item.imageUrl && (
+        <Image source={{ uri: item.imageUrl }} style={styles.postImage} />
+      )}
+      <View style={styles.postContent}>
+        <Text style={styles.postTitle}>{item.title}</Text>
+        <Text style={styles.postDescription} numberOfLines={2}>
+          {item.description}
         </Text>
-        <Text style={styles.postDate}>
-          {new Date(item.createdAt).toLocaleDateString()}
-        </Text>
+        <View style={styles.postMeta}>
+          <Text style={styles.cookTime}>
+            ⏱️ {item.cookTime} {item.cookTimeUnit}
+          </Text>
+          <Text style={styles.postDate}>
+            {new Date(item.createdAt).toLocaleDateString()}
+          </Text>
+        </View>
       </View>
     </TouchableOpacity>
   );
@@ -107,13 +113,21 @@ const styles = StyleSheet.create({
   postCard: {
     backgroundColor: '#fff',
     borderRadius: 12,
-    padding: 16,
     marginBottom: 12,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 3,
+    overflow: 'hidden',
+  },
+  postImage: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'cover',
+  },
+  postContent: {
+    padding: 16,
   },
   postTitle: {
     fontSize: 18,

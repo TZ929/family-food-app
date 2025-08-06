@@ -22,7 +22,10 @@ connection.once('open', () => {
 })
 
 const usersRouter = require('./routes/users');
+const foodPostsRouter = require('./routes/foodPosts');
+
 app.use('/users', usersRouter);
+app.use('/food-posts', foodPostsRouter);
 
 // Centralized error handler
 const errorHandler = require('./middleware/errorHandler');
@@ -32,6 +35,6 @@ app.get('/', (req, res) => {
   res.send('Family Food & Recipe Sharing App API');
 });
 
-app.listen(port, () => {
+app.listen(port, '0.0.0.0', () => {
   console.log(`Server is running on port: ${port}`);
 }); 

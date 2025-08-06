@@ -64,32 +64,48 @@ This application is designed to bring families and friends together through the 
 - [x] Add logout functionality and token management
 - [x] Implement tab navigation (Home/Explore) for authenticated users
 
-### Phase 3: Core Frontend Web (optional)
+### Phase 3: Core Food & Recipe Features (Mobile)
 
-- [ ] Set up a React web application (if web dashboard is desired)
-- [ ] Create basic UI components (e.g., Navbar, Buttons, Cards)
-- [ ] Implement user registration and login pages
-- [ ] Create a simple dashboard for authenticated users
-- [ ] Implement the ability to create, view, edit, and delete food posts (without images first)
+- [x] Create food post creation screen (title, description, cook time)
+- [x] Add food post listing with pull-to-refresh
+- [x] Implement post creation with form validation
+- [x] Add tab navigation for posts management
+- [x] Add image upload functionality to food post creation
+- [x] Implement image display in food post listings
+- [x] Add camera and gallery image picker functionality
+- [x] Configure Cloudinary for cloud image storage
+- [ ] Create food post detail view screen
+- [ ] Implement post editing and deletion (for post owners)
+- [ ] Add recipe creation and editing functionality
 
 ### Phase 4: Family & Friends System
 
 - [ ] Implement backend logic for creating and joining families
 - [ ] Develop backend logic for adding/removing friends
-- [ ] Create frontend interfaces for managing families and friends (mobile and/or web)
+- [ ] Create mobile interfaces for managing families and friends
 - [ ] Adjust permissions based on user roles (Family, Friend)
+- [ ] Implement family-specific feeds and friend feeds
 
-### Phase 5: Ratings, Comments & Image Uploads
+### Phase 5: Ratings, Comments & Social Features
 
 - [ ] Add backend routes for rating and commenting on posts
-- [ ] Integrate a file storage solution for image uploads
-- [ ] Update the frontend to allow users to upload images with their posts
 - [ ] Display ratings and comments on food posts
+- [ ] Add image viewing and gallery functionality
+- [ ] Implement post sharing and social features
 
-### Phase 6: Community Features & Deployment
+### Phase 6: Community Features & Polish
 
 - [ ] Implement the "Community Cookbook" feature
 - [ ] Add functionality to publish recipes to the community
-- [ ] Refine the UI/UX (mobile and/or web)
-- [ ] Prepare the application for deployment (App Store, Play Store, web hosting)
-- [ ] Deploy the application to a cloud provider
+- [ ] Create recipe browsing and search functionality
+- [ ] Add user profiles and cook statistics
+- [ ] Implement recipe sharing and favoriting
+
+### Phase 7: App Store Preparation & Deployment
+
+- [ ] Optimize app performance and UI/UX
+- [ ] Add app icons, splash screens, and branding
+- [ ] Implement push notifications for family activities
+- [ ] Add app store metadata and screenshots
+- [ ] Prepare for App Store submission and review process
+- [ ] Deploy backend to production cloud platform
